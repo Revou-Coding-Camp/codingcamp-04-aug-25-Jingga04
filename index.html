@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <div class="form-group">
+      <input type="text" id="todo-input" placeholder="Add a todo..." />
+      <input type="date" id="date-input" />
+      <button id="add-btn">+</button>
+    </div>
+    <div class="actions">
+      <select id="filter-select">
+  <option value="all">All</option>
+  <option value="pending">Pending</option>
+  <option value="completed">Completed</option>
+</select>
+
+      <button id="delete-all-btn" class="danger">DELETE ALL</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>TASK</th>
+          <th>DUE DATE</th>
+          <th>STATUS</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody id="todo-list">
+        <tr>
+          <td colspan="4" class="no-task">No task found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="js/script.js"></script>
+
+  <footer class="footer">
+  <p>&copy; 2025 Todo List App | Designed by Jingga Mustika</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* Background senja */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffbb66, #ff9966, #cc4444);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container utama */
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff5e6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Form input task & date */
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group input, .form-group button {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+#todo-input, #date-input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+#add-btn {
+  background-color: #ff8c42;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#add-btn:hover {
+  background-color: #e6731b;
+}
+
+/* Filter & Delete All bar */
+.actions {
+  display: flex;
+  justify-content: space-between; /* Filter kiri, tombol kanan */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#filter-select {
+  width: 130px; /* Lebar kecil */
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.actions button {
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+}
+
+.actions button:hover {
+  background-color: #b30000;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.no-task {
+  text-align: center;
+  color: #ffe5d4;
+}
+
+/* Tombol aksi */
+.action-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+/* Done - Hijau */
+.action-btn.done {
+  background-color: #22c55e;
+  color: white;
+}
+.action-btn.done:hover {
+  background-color: #15803d;
+}
+
+/* View - Kuning */
+.action-btn.view {
+  background-color: #ffcc66;
+  color: black;
+}
+.action-btn.view:hover {
+  background-color: #e6b800;
+}
+
+/* Delete - Merah */
+.action-btn.delete {
+  background-color: #ef4444;
+  color: white;
+}
+.action-btn.delete:hover {
+  background-color: #b91c1c;
+}
+
+/* Modal background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Modal content */
+.modal-content {
+  background: linear-gradient(to bottom, #ffbb66, #ff9966, #cc4444);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.close-btn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+/* Animasi modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff5e6;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer p {
+  margin: 0;
+}
