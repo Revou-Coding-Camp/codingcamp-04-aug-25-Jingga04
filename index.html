@@ -9,20 +9,28 @@
 <body>
   <div class="container">
     <h1>Todo List</h1>
+
+    <!-- Form input -->
     <div class="form-group">
       <input type="text" id="todo-input" placeholder="Add a todo..." />
       <input type="date" id="date-input" />
       <button id="add-btn">+</button>
     </div>
-    <div class="actions">
-      <select id="filter-select">
-  <option value="all">All</option>
-  <option value="pending">Pending</option>
-  <option value="completed">Completed</option>
-</select>
 
+    <!-- Filter & Delete All -->
+    <div class="actions">
+      <div class="filter-group">
+        <label for="filter-select" class="filter-label">Filter</label>
+        <select id="filter-select">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
       <button id="delete-all-btn" class="danger">DELETE ALL</button>
     </div>
+
+    <!-- Tabel -->
     <table>
       <thead>
         <tr>
@@ -39,11 +47,24 @@
       </tbody>
     </table>
   </div>
-  <script src="js/script.js"></script>
 
+  <!-- Modal View Detail -->
+  <div id="viewModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Task Detail</h2>
+      <p><strong>Task:</strong> <span id="modalTask"></span></p>
+      <p><strong>Due Date:</strong> <span id="modalDate"></span></p>
+      <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
-  <p>&copy; 2025 Todo List App | Designed by Jingga Mustika</p>
-</footer>
+    <p>&copy; 2025 Todo List App | Designed by Jingga Mustika</p>
+  </footer>
 
+  <!-- Script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
