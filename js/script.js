@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteAllBtn = document.getElementById("delete-all-btn");
   const todoList = document.getElementById("todo-list");
 
-  // Modal elements
+  // Modal elements (pastikan ada di HTML)
   const modal = document.getElementById("viewModal");
   const closeModal = document.getElementById("closeModal");
   const modalTask = document.getElementById("modalTask");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (filteredTodos.length === 0) {
-      todoList.innerHTML = <tr><td colspan="4" class="no-task">No task found</td></tr>;
+      todoList.innerHTML = `<tr><td colspan="4" class="no-task">No task found</td></tr>`;
       return;
     }
 
@@ -91,29 +91,37 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.markDone = function (index) {
-    todos[index].status = "Completed";
-    saveTodos();
-    renderTodos(filterSelect.value);
+    if (todos[index].status !== "Completed") {
+      todos[index].status = "Completed";
+      saveTodos();
+      renderTodos(filterSelect.value);
+    }
   };
 
   window.viewDetail = function (index) {
-    const todo = todos[index];
-    modalTask.textContent = todo.task;
-    modalDate.textContent = todo.date;
-    modalStatus.textContent = todo.status;
-    modal.style.display = "block";
+    if (modal) {
+      const todo = todos[index];
+      modalTask.textContent = todo.task;
+      modalDate.textContent = todo.date;
+      modalStatus.textContent = todo.status;
+      modal.style.display = "block";
+    } else {
+      alert("Task: " + todos[index].task + "\nDue Date: " + todos[index].date + "\nStatus: " + todos[index].status);
+    }
   };
 
   // Close modal
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+  if (closeModal) {
+    closeModal.addEventListener("click", () => {
       modal.style.display = "none";
-    }
-  });
+    });
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 
   // Initial render
   renderTodos();
-})
+});
